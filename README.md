@@ -18,7 +18,7 @@ def get_lunch():
 
 The key elements here are the `def` statement, the name of the function, the parentheses and the colon at the end of the declaration. The instructions go inside this function as demonstrated by the indentation.
 
-Indentation matters in Python. If the code blocks is not properly indented, your code throw an error:
+Indentation matters in Python. If the code block is not properly indented, your code throw an error:
 ```
 IndentationError: unindent does not match any outer indentation level
 ```
