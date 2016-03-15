@@ -33,12 +33,19 @@ def get_lunch():
 ```
 If you put this code into a Python script, nothing will happen. Why is that? We declared our function - which is like adding the `get_lunch` function to the computer’s dictionary - but we didn’t actually tell the computer to execute the function.
 
-To invoke a function, write the name of the function and include parenthesis. The parenthesis should contain your arguments if needed.
+To invoke a function, write the name of the function and include parenthesis. The parenthesis should contain your arguments if needed. Here's how we'd invoke the `get_lunch()` defined above:
+
+```
+get_lunch()
+>> "Close Computer"
+>> "Stand Up"
+>> "Walk out the door"
+```
 
 
 ## Using Parameters (Inputs)
 
-To add a parameter to a function in Python, just add the parameters inside of the parenthesis in your function declaration.
+In the example above, we created functions without any inputs, or parameters. However, most of the time you'll want your functions to take in a piece of data (or more than one) and then return data based on that initial input. To add a parameter to a function in Python, just add the parameter variables inside of the parenthesis in your function declaration.
 
 ```python
 def get_lunch(student):
@@ -51,11 +58,53 @@ Then call the function by writing the name of the function and a name as the arg
 
 ```python
 get_lunch("Joe");
+>>'hey Joe '
+>>'close your computer'
+>>'stand up'
+>>'walk out the door'
+
 get_lunch("Jill");
+>>'hey Jill '
+>>'close your computer'
+>>'stand up'
+>>'walk out the door'
+
 get_lunch("Josie");
+>>'hey Josie '
+>>'close your computer'
+>>'stand up'
+>>'walk out the door'
 ```
+As you can see above, we call the function three times with a different name for the `student` parameter. The content that is printed to the console is changed based on that input.
+
+Let's practice with another example. Let's say we want to create a function that prints the square of any number that we're given. First, we define the function:
+
+```python
+def square(number):
+
+```
+We created a parameter `number` to hold the value that the user passes to us when they call the function.
+
+```python
+def square(number):
+    squared_number = number*number
+    print squared_number
+```
+In the method's code block, we create a variable called `squared_number` and set it equal to the number multiplied by itself. Finally, we print this `squared_number` variable.
+
+Now, let's try calling the method.
+
+```
+square(2)
+>> 4
+square(6)
+>> 36
+square(20)
+>>400
+```
+
 ### Arguments vs Parameters
-Again it's important to distinguish between arguments and parameters.
+It's important to distinguish between arguments and parameters.
 * A parameter is a variable in the function definition: "student".
 * An argument is the data you pass into the function's parameters when you call it: "Joe", "Jill", "Josie"
 
