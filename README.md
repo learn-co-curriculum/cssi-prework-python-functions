@@ -1,6 +1,8 @@
 
 #Python Functions
-In order to write efficient code, functions are essential. As you will see as you continue to transition to Python, many of the concepts of programming's building blocks are the same - including functions. The syntax is really one of the few differences between functions in JavaScript and functions in Python. 
+In order to write efficient code, functions are essential. Functions allow us to avoid redundancy because functions allow us to perform similar operations on different data. Functions also make our scripts hierarchical and more readable because functions break our code apart into smaller modules.
+
+As you will see as you continue to transition to Python, many of the concepts of programming's building blocks are the same - including functions. The syntax is really one of the few differences between functions in JavaScript and functions in Python. 
 
 #Objectives:
 + Declare functions with and without parameters
@@ -12,7 +14,7 @@ In order to write efficient code, functions are essential. As you will see as yo
 The syntax for writing Python functions is very specific. To define a function in Python, you want to use the `def` statement:
 
 ```python
-def get_lunch():
+def my_greeting():
 	print ""
 ```
 
@@ -26,56 +28,50 @@ IndentationError: unindent does not match any outer indentation level
 Just like variable names, function names should be snake_case - lowercase characters separated by underscores when necessary.
 
 ```python
-def get_lunch():
-	print "Close Computer"
-	print "Stand up"
-	print "Walk out the door"
+def my_greeting():
+	print "Hello Python programmer"
 ```
-If you put this code into a Python script, nothing will happen. Why is that? We declared our function - which is like adding the `get_lunch` function to the computer’s dictionary - but we didn’t actually tell the computer to execute the function.
+If you put this code into a Python script, nothing will happen. Why is that? We declared our function - which is like adding the `my_greeting` function to the computer’s dictionary - but we didn’t actually tell the computer to execute the function.
 
-To invoke a function, write the name of the function and include parenthesis. The parenthesis should contain your arguments if needed. Here's how we'd invoke the `get_lunch()` defined above:
+To invoke a function, write the name of the function and include parenthesis. The parenthesis should contain your arguments if needed. Here's how we'd invoke the `my_greeting()` function defined above. 
 
 ```
-get_lunch()
->> "Close Computer"
->> "Stand Up"
->> "Walk out the door"
+>>my_greeting()
+Hello Python programmer
 ```
 
 
 ## Using Parameters (Inputs)
-
-In the example above, we created functions without any inputs, or parameters. However, most of the time you'll want your functions to take in a piece of data (or more than one) and then return data based on that initial input. To add a parameter to a function in Python, just add the parameter variables inside of the parenthesis in your function declaration.
+As amazing as the `my_greeting()` function is, it's still pretty literal. It hard-codes, or directly specifies, name of the person we are greeting as `"Python programmer"`. If we wanted to build a method that can greet *anyone*, even Ruby programmers, we'd have to re-implement the majority of the original logic from `greeting`:
 
 ```python
-def get_lunch(student):
-	print 'hey, ' + student
-	print 'close your computer'
-	print 'stand up'
-	print 'walk out the door'
+def my_greeting_ruby():
+  print "Hello, Ruby programmer!"
+end
+```
+
+Notice the only things that changed are the function name and the language name `"Ruby"` in the body of the function. It's as though that information should be specifiable or configurable when you call the funciton, otherwise we'd have to build every permutation of the function. In other words, we'd have to re-write the funciton for every single person we want to greet. 
+
+We always want functions to be more dynamic, more abstract, *more re-usable*. They should maintain the elements that will always be the same, no matter who we greet, and allow us to change, or swap out, the name of the person we are greeting. This is dynamic, as opposed to "hard-coded". 
+
+Good news, that's exactly what parameters are for:
+
+
+```python
+def my_greeting(name):
+	print 'Hello, ' + name +'!'
 ```
 Then call the function by writing the name of the function and a name as the argument.
 
 ```python
-get_lunch("Joe");
->>'hey Joe '
->>'close your computer'
->>'stand up'
->>'walk out the door'
+>>>my_greeting("Newman");
+Hello, Newman!
 
-get_lunch("Jill");
->>'hey Jill '
->>'close your computer'
->>'stand up'
->>'walk out the door'
+>>>my_greeting("Jerry")
+Hello, Jerry!
 
-get_lunch("Josie");
->>'hey Josie '
->>'close your computer'
->>'stand up'
->>'walk out the door'
 ```
-As you can see above, we call the function three times with a different name for the `student` parameter. The content that is printed to the console is changed based on that input.
+As you can see above, we call the function three times with a different value for the `name` parameter. The content that is printed to the console is changed based on that input.
 
 Let's practice with another example. Let's say we want to create a function that prints the square of any number that we're given. First, we define the function:
 
