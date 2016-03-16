@@ -1,6 +1,6 @@
 
 #Python Functions
-In order to write efficient code, functions are essential. Functions allow us to avoid redundancy because functions allow us to perform similar operations on different data. Functions also make our scripts hierarchical and more readable because functions break our code apart into smaller modules.
+In order to write efficient code, functions are essential. Remember that functions are tiny modules of code. Functions allow us to avoid redundancy because functions allow us to perform similar operations on different data. Functions also make our scripts hierarchical and more readable because functions break our code apart into smaller abstractions.
 
 As you will see as you continue to transition to Python, many of the concepts of programming's building blocks are the same - including functions. The syntax is really one of the few differences between functions in JavaScript and functions in Python. 
 
