@@ -111,7 +111,8 @@ It's important to distinguish between arguments and parameters.
 * An argument is the data you pass into the function's parameters when you call it: "Joe", "Jill", "Josie"
 
 ## Return Values
-When a function is invoked, the code block is executed. If you want to make use of a modified value elsewhere in the code, you need to return that value. To return a variable use the `return` keyword.
+
+So far, we've been ending our functions with `print` so that we can see the output of the function. However, we are going to move away from this from now on. When a function is invoked, the code block is executed and we want to take away a value that we can use in other parts of our code. Maybe we want to feed the value into another function, or save it to a database. If we use the `print` keyword, the return value will always be *nothing* or `'NoneType'`. If you want to make use of the value coming out of a function elsewhere in your code, you need to `return` that value. To return a variable use the `return` keyword.
 
 ```python
 def weird_math(x,y):
@@ -120,7 +121,17 @@ def weird_math(x,y):
 print weird_math(2,3)
 => 23		
 ```
-Note that we're not printing the value, we're returning it and then printing the return value when we call the function itself
+Note that we're not printing the value inside of our method. Instead we're `return`ing it and then printing the return value when we call the function itself. It looks like a small change, but it makes a big difference in what you can do with your code. From now on, be sure to use `return` at the end of your functions (unless you really just want to print something). Feel free to also use `print` inside your function, just make sure it's not on the last line:
+
+```python
+def weird_math(x,y):
+    print "this is a very strange equation"
+    return (x * 10) + y
+
+print weird_math(2,3)
+=> this is a very strange equation
+=> 23
+```
 
 ## Variable Scope
 
